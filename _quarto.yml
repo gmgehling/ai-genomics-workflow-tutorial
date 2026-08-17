@@ -4,15 +4,21 @@ project:
 book:
   title: "AI Genomics Workflow Tutorial"
   author: "Gina M. Gehling & Lacey W. Heinsberg"
-  date: "2026"
+  date: last-modified
+  date-format: "YYYY"
   chapters:
     - index.qmd
-    - tutorial_q.qmd
+    - part: "Tutorial"
+      chapters:
+        - tutorial_overview.qmd
+        - tutorial_code_of_conduct.qmd
+        - tutorial_application.qmd
+        - tutorial_disclosure.qmd
 format:
   html:
     theme: cosmo
     highlight-style: tango
     toc: true
     code-fold: show
-
     number-sections: false
+

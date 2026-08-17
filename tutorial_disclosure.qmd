@@ -1,0 +1,9 @@
+# Generative AI Disclosure
+
+This tutorial was developed by the authors, with generative AI
+(Claude, Anthropic) used throughout the preparation of this document,
+including drafting of the synthetic dataset code, R code annotations,
+and structuring of the tutorial narrative. All scientific content,
+analytic decisions, and code were reviewed and approved by the
+authors, who take full responsibility for the accuracy and integrity
+of this work.

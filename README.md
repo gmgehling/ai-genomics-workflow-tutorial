@@ -22,16 +22,19 @@ the workflow as a demonstration of the process rather than as a
 standalone executable tool.
 
 ## View the Tutorial
-The fully formatted tutorial — including cologe at: **[GitHub Pages URL — to be added once published]**
+The tutorial can be found at: https://gmgehling.github.io/ai-genomics-workflow-tutorial/
 
 ## Repository Contents
-- `tutorial_q.qmd` — tutorial source (Quarto)
 - `index.qmd` — landing page
+- `tutorial_overview.qmd` — tutorial overview and introduction
+- `tutorial_code_of_conduct.qmd` — example analytic code of conduct
+- `tutorial_application.qmd` — applied nursing genomics example, including all R code
+- `tutorial_disclosure.qmd` — generative AI disclosure statement
 - `figures/` — figures referenced in the tutorial
 
 ## Contact Information
 If you have any questions or comments, please feel free to contact us.
 
 Gina M. Gehling: [gmg153@pitt.edu](mailto:gmg153@pitt.edu)<br/>
-Lacey W. Heinsberg: [law145@pitt.edu](mailto:law145)
+Lacey W. Heinsberg: [law145@pitt.edu](mailto:law145@pitt.edu)
 

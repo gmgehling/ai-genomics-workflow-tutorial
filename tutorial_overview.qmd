@@ -1,0 +1,14 @@
+# Overview
+
+## Copyright
+
+Copyright 2026, University of Pittsburgh. All Rights Reserved.<br/>
+License: GPL-2 ([link](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html))
+
+## Introduction
+
+Generative AI (GenAI) tools (e.g., Claude, Gemini) are systems capable
+of generating text, code, and other content in response to user
+prompts (Figure 1).
+
+![**Figure 1.** Generative AI, LLMs, and GPTs: a nested relationship.](figures/fig1_genai_llm_gpt_relationship.png){width=70%}

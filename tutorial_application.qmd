@@ -1,68 +1,12 @@
----
-title: "AI Genomics Workflow Tutorial"
-author: "Gina M. Gehling, PhD, RN & Lacey W. Heinsberg, PhD, RN"
-format: html
----
+# Application
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, fig.align = "center")
 ```
 
-## Copyright
-Copyright 2026, University of Pittsburgh. All Rights Reserved.</br>
-License: GPL-2 ([link](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html))
-
-## Overview
-
-Generative AI (GenAI) tools (e.g., Claude, Gemini) are systems capable
-of generating text, code, and other content in response to user
-prompts (Figure 1).
-
-![**Figure 1.** Generative AI, LLMs, and GPTs: a nested relationship.](figures/fig1_genai_llm_gpt_relationship.png){width=70%}
-:::
-
-::: {.callout-caution}
-**⚠ THIS TUTORIAL USES SYNTHETIC DATA. ⚠**
-
-Every value generated and analyzed below is randomly simulated and
-does **not** represent any real research participant. This document
-exists solely to demonstrate the *structure of the data* and the
-*analytical code* used in the workflow, so that the pipeline is
-transparent and reproducible.
-:::
-
-## Code of Conduct
-
-For nurse scientists operating at the intersection of clinical care and research, using GenAI thoughtfully begins with GenAI literacy—an increasingly essential professional competency. GenAI literacy is defined here as having the knowledge and skills to use GenAI tools effectively, responsibly, and ethically to accomplish tasks. We conceptualize GenAI literacy across three core dimensions: technical, practical, and ethical (Figure 2). 
-
-![**Figure 2.** Framework for GenAI literacy to
-guide responsible use.](figures/fig2_genai_literacy_framework.png){width=70%}
-:::
-
-Before beginning, we review an example analytic code of conduct for responsible GenAI collaboration, built around those three dimensions of GenAI literacy (Table 1). These examples are offered not as prescriptive rules but as illustrative examples; individuals are encouraged to adapt them to their own values, research context, and institutional policies.
-
-**Table 1.** Example analytic code of conduct for GenAI use.
-
-| Principle | Description |
-|---|---|
-| Build competence before reliance | Prioritize understanding statistical and programming concepts before using GenAI-generated code |
-| Respect data privacy | Do not upload real participant data (use synthetic data during code development) |
-| Maintain objectivity | Critically evaluate GenAI output (check for hallucinations and misapplied methods) |
-| Retain interpretive authority | GenAI can translate statistical output into plain language, but humans determine clinical and scientific significance |
-| Be transparent | Disclose GenAI involvement in code, figures, and manuscripts |
-| Revisit ethics and policy | Frequently revisit GenAI ethics through regular self-reflection as norms evolve rapidly |
-
-::: {.callout-important}
-**Core principle:** GenAI is a tool, not a decision-maker.
-Humans retain full interpretive authority over every analytic decision
-in this workflow.
-:::
-
-## Application 
-
 The principles outlined in Table 1 are exemplified through the following nursing-focused genomic research example.
 
-### Scenario
+## Scenario
 
 Imagine a research team conducting a study to examine whether DNA
 methylation (DNAm — a chemical modification to DNA that can influence
@@ -92,24 +36,22 @@ severity based on the amount of blood seen on initial brain imaging).
 
 DNAm here reflects peripheral blood methylation, a common and
 accessible proxy in biobehavioral nursing research, though not a
-direct measure of central pain pathways. In this example study, the *ABC* gene 
+direct measure of central pain pathways. In this example study, the *ABC* gene
 and the 13 CpG sites were selected a priori based on prior literature and their
 location within known regulatory regions. This reflects a candidate-gene approach rather
 than exploratory design.
 
-### The Two-Phase Workflow
+## The Two-Phase Workflow
 
 The proposed workflow spans two phases. Phase one covers planning and
 pre-specification; phase two covers code development on synthetic
 data, extension to real data, interpretation, and final human review
 and disclosure.
 
-:::{.centered-image}
 ![**Figure 3.** Two-phase workflow for responsible human-AI collaboration
-in quantitative data analysis.](figures/fig3_two_phase_workflow.png){width=70%}
-:::
+in quantitative data analysis.](figures/fig3_two_phase_workflow.png){width=90%}
 
-#### Phase One: Planning and Pre-Specification
+### Phase One: Planning and Pre-Specification
 
 The first phase establishes the analytical foundation before any code
 is written. The researcher articulates the research question, data
@@ -174,9 +116,9 @@ Once the analytical plan has been refined, it should be written down
 as a concise pre-specified analytic proposal and shared with the full
 research team for review and approval before any code runs.
 
-#### Phase Two: Execution, Translation, and Disclosure
+### Phase Two: Execution, Translation, and Disclosure
 
-##### Build the Synthetic Dataset
+#### Build the Synthetic Dataset
 
 A foundational principle of this workflow is the synthetic-data-first
 approach: the full analytical workflow is built and tested using
@@ -199,7 +141,7 @@ individual rows, values, or screenshots — shared with GenAI platforms.
 -	Covariates: age (normal distribution, mean=55, SD=10); sex (Male/Female, with Female accounting for 70% of the sample, consistent with the aSAH literature); fisher_grade (categories 2, 3, 4 with probabilities 0.3, 0.4, 0.3)
 -	Additional variables: ID (sequential integer, 1-650); has_dnam (logical)
 
-**Variable names and types:** ID (sequential integer, 1-650), age (numeric), sex (character: “male”/”female”), fisher_grade (integer: 2, 3, or 4), acute_headache (binary: 0/1 where 1=yes), persistent_headache (binary: 0/1 where 1=yes), has_dnam (logical: TRUE/FALSE), cg1-cg13 (numeric).
+**Variable names and types:** ID (sequential integer, 1-650), age (numeric), sex (character: "male"/"female"), fisher_grade (integer: 2, 3, or 4), acute_headache (binary: 0/1 where 1=yes), persistent_headache (binary: 0/1 where 1=yes), has_dnam (logical: TRUE/FALSE), cg1-cg13 (numeric).
 
 Apply a fixed seed (set.seed(123)) to promote reproducibility.
 :::
@@ -285,7 +227,7 @@ was a deliberate choice for this synthetic-data stage; it should be
 revisited and validated against the true DNAm distribution once real 
 data are available, before any inferential results are reported.
 
-##### Explore the Synthetic Data
+#### Explore the Synthetic Data
 
 Before modeling, confirm the simulated data matches the intended
 structure — this check is done by the human, not delegated to GenAI.
@@ -304,7 +246,7 @@ mean(df$acute_headache)
 mean(df$persistent_headache)
 ```
 
-##### Fit the Analytic Model
+#### Fit the Analytic Model
 
 Throughout code development, GenAI can be used for targeted tasks —
 drafting initial code, debugging error messages, refining and
@@ -477,7 +419,7 @@ modification because it was written for a data structure, not a
 specific file.
 :::
 
-##### Extend to Real Data
+#### Extend to Real Data
 
 Once the pipeline has been built and validated on synthetic data, it
 can be extended to the real data by simply swapping the synthetic data
@@ -490,7 +432,7 @@ but never real data.
 *(This step is illustrative only in this tutorial, since no real
 dataset is used here.)*
 
-##### Interpret Results
+#### Interpret Results
 
 Under the guiding principles in Table 1, GenAI is used to translate
 statistical output into plain language, but the researcher retains
@@ -529,7 +471,7 @@ researchers at any career stage, making this boundary explicit in the
 prompt itself is better than leaving it implicit.
 :::
 
-##### Human Review and Disclosure
+#### Human Review and Disclosure
 
 The workflow closes with human review and transparent disclosure. A
 clean, reproducible report is generated from the scripted workflow,
@@ -538,12 +480,3 @@ transparency principle outlined in Table 1, GenAI involvement should
 be disclosed in all research products, including the specific tool
 used and the nature of its contributions.
 
-## Generative AI Disclosure
-
-This tutorial was developed by the authors, with generative AI
-(Claude, Anthropic) used throughout the preparation of this document,
-including drafting of the synthetic dataset code, R code annotations,
-and structuring of the tutorial narrative. All scientific content,
-analytic decisions, and code were reviewed and approved by the
-authors, who take full responsibility for the accuracy and integrity
-of this work.

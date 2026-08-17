@@ -8,7 +8,7 @@ Gehling GM, Heinsberg LW. *Partnering with Generative Artificial Intelligence fo
 License: GPL-2 ([link](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html))
 
 ::: {.callout-caution}
-## ⚠ This Tutorial Uses Synthetic Data
+## This Tutorial Uses Synthetic Data
 Every value generated and analyzed in this tutorial is randomly simulated and does **not** represent any real research participant. This document exists solely to demonstrate the *structure of the data* and the *analytical code* used in the workflow, so that the pipeline is transparent and reproducible.
 :::
 
