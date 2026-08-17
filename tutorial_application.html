@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Gina M. Gehling, PhD, RN &amp; Lacey W. Heinsberg, PhD, RN">
 
-<title>AI Genomics Workflow Tutorial – AI Genomics Workflow Tutorial</title>
+<title>Application – AI Genomics Workflow Tutorial</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -72,7 +71,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./index.html" rel="prev">
+<link href="./tutorial_disclosure.html" rel="next">
+<link href="./tutorial_code_of_conduct.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -123,7 +123,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tutorial_q.html"><span class="chapter-title">AI Genomics Workflow Tutorial</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tutorial_overview.html">Tutorial</a></li><li class="breadcrumb-item"><a href="./tutorial_application.html"><span class="chapter-title">Application</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -153,11 +153,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Tutorial</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorial_q.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">AI Genomics Workflow Tutorial</span></a>
+  <a href="./tutorial_overview.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorial_code_of_conduct.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Code of Conduct</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorial_application.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Application</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorial_disclosure.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Generative AI Disclosure</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -168,36 +194,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#copyright" id="toc-copyright" class="nav-link active" data-scroll-target="#copyright">Copyright</a></li>
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#code-of-conduct" id="toc-code-of-conduct" class="nav-link" data-scroll-target="#code-of-conduct">Code of Conduct</a></li>
-  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application">Application</a>
+  <li><a href="#scenario" id="toc-scenario" class="nav-link active" data-scroll-target="#scenario">Scenario</a></li>
+  <li><a href="#the-two-phase-workflow" id="toc-the-two-phase-workflow" class="nav-link" data-scroll-target="#the-two-phase-workflow">The Two-Phase Workflow</a>
   <ul class="collapse">
-  <li><a href="#scenario" id="toc-scenario" class="nav-link" data-scroll-target="#scenario">Scenario</a></li>
-  <li><a href="#the-two-phase-workflow" id="toc-the-two-phase-workflow" class="nav-link" data-scroll-target="#the-two-phase-workflow">The Two-Phase Workflow</a></li>
+  <li><a href="#phase-one-planning-and-pre-specification" id="toc-phase-one-planning-and-pre-specification" class="nav-link" data-scroll-target="#phase-one-planning-and-pre-specification">Phase One: Planning and Pre-Specification</a></li>
+  <li><a href="#phase-two-execution-translation-and-disclosure" id="toc-phase-two-execution-translation-and-disclosure" class="nav-link" data-scroll-target="#phase-two-execution-translation-and-disclosure">Phase Two: Execution, Translation, and Disclosure</a></li>
   </ul></li>
-  <li><a href="#generative-ai-disclosure" id="toc-generative-ai-disclosure" class="nav-link" data-scroll-target="#generative-ai-disclosure">Generative AI Disclosure</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tutorial_overview.html">Tutorial</a></li><li class="breadcrumb-item"><a href="./tutorial_application.html"><span class="chapter-title">Application</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">AI Genomics Workflow Tutorial</span></h1>
+<h1 class="title"><span class="chapter-title">Application</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Gina M. Gehling, PhD, RN &amp; Lacey W. Heinsberg, PhD, RN </p>
-          </div>
-  </div>
     
   
     
@@ -208,92 +225,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="copyright" class="level2">
-<h2 class="anchored" data-anchor-id="copyright">Copyright</h2>
-<p>Copyright 2026, University of Pittsburgh. All Rights Reserved.<br> License: GPL-2 (<a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html">link</a>)</p>
-</section>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Generative AI (GenAI) tools (e.g., Claude, Gemini) are systems capable of generating text, code, and other content in response to user prompts (Figure 1).</p>
-<p><img src="figures/fig1_genai_llm_gpt_relationship.png" class="img-fluid" style="width:70.0%" alt="Figure 1. Generative AI, LLMs, and GPTs: a nested relationship."> :::</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>⚠ THIS TUTORIAL USES SYNTHETIC DATA. ⚠</strong></p>
-<p>Every value generated and analyzed below is randomly simulated and does <strong>not</strong> represent any real research participant. This document exists solely to demonstrate the <em>structure of the data</em> and the <em>analytical code</em> used in the workflow, so that the pipeline is transparent and reproducible.</p>
-</div>
-</div>
-</section>
-<section id="code-of-conduct" class="level2">
-<h2 class="anchored" data-anchor-id="code-of-conduct">Code of Conduct</h2>
-<p>For nurse scientists operating at the intersection of clinical care and research, using GenAI thoughtfully begins with GenAI literacy—an increasingly essential professional competency. GenAI literacy is defined here as having the knowledge and skills to use GenAI tools effectively, responsibly, and ethically to accomplish tasks. We conceptualize GenAI literacy across three core dimensions: technical, practical, and ethical (Figure 2).</p>
-<p><img src="figures/fig2_genai_literacy_framework.png" class="img-fluid" style="width:70.0%" alt="Figure 2. Framework for GenAI literacy to guide responsible use."> :::</p>
-<p>Before beginning, we review an example analytic code of conduct for responsible GenAI collaboration, built around those three dimensions of GenAI literacy (Table 1). These examples are offered not as prescriptive rules but as illustrative examples; individuals are encouraged to adapt them to their own values, research context, and institutional policies.</p>
-<p><strong>Table 1.</strong> Example analytic code of conduct for GenAI use.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Principle</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Build competence before reliance</td>
-<td>Prioritize understanding statistical and programming concepts before using GenAI-generated code</td>
-</tr>
-<tr class="even">
-<td>Respect data privacy</td>
-<td>Do not upload real participant data (use synthetic data during code development)</td>
-</tr>
-<tr class="odd">
-<td>Maintain objectivity</td>
-<td>Critically evaluate GenAI output (check for hallucinations and misapplied methods)</td>
-</tr>
-<tr class="even">
-<td>Retain interpretive authority</td>
-<td>GenAI can translate statistical output into plain language, but humans determine clinical and scientific significance</td>
-</tr>
-<tr class="odd">
-<td>Be transparent</td>
-<td>Disclose GenAI involvement in code, figures, and manuscripts</td>
-</tr>
-<tr class="even">
-<td>Revisit ethics and policy</td>
-<td>Frequently revisit GenAI ethics through regular self-reflection as norms evolve rapidly</td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Core principle:</strong> GenAI is a tool, not a decision-maker. Humans retain full interpretive authority over every analytic decision in this workflow.</p>
-</div>
-</div>
-</section>
-<section id="application" class="level2">
-<h2 class="anchored" data-anchor-id="application">Application</h2>
 <p>The principles outlined in Table 1 are exemplified through the following nursing-focused genomic research example.</p>
-<section id="scenario" class="level3">
-<h3 class="anchored" data-anchor-id="scenario">Scenario</h3>
+<section id="scenario" class="level2">
+<h2 class="anchored" data-anchor-id="scenario">Scenario</h2>
 <p>Imagine a research team conducting a study to examine whether DNA methylation (DNAm — a chemical modification to DNA that can influence gene expression without changing the underlying sequence) in the <em>ABC</em> gene is associated with patient-reported headache outcomes following aneurysmal subarachnoid hemorrhage (aSAH), a type of stroke caused by bleeding into the space surrounding the brain.</p>
 <p>The study builds on an existing aSAH cohort of 650 patients, with genome-wide DNAm data available for a subset of 200. The outcomes of interest are two patient-reported headache measures:</p>
 <ul>
@@ -303,19 +237,17 @@ Important
 <p>Acute and persistent headache were each coded as binary (0 = absent, 1 = present), with “present” defined as a patient-reported pain score of ≥4 on an 11-point numeric rating scale (0 = no pain, 10 = worst pain imaginable), consistent with a moderate-to-severe threshold. The analytical models examine whether DNAm levels at 13 specific sites in the <em>ABC</em> gene (measured as M-values, a continuous measure of methylation intensity) predict acute and persistent headache status, adjusting for age, sex, and Fisher grade (a clinical measure of stroke severity based on the amount of blood seen on initial brain imaging).</p>
 <p>DNAm here reflects peripheral blood methylation, a common and accessible proxy in biobehavioral nursing research, though not a direct measure of central pain pathways. In this example study, the <em>ABC</em> gene and the 13 CpG sites were selected a priori based on prior literature and their location within known regulatory regions. This reflects a candidate-gene approach rather than exploratory design.</p>
 </section>
-<section id="the-two-phase-workflow" class="level3">
-<h3 class="anchored" data-anchor-id="the-two-phase-workflow">The Two-Phase Workflow</h3>
+<section id="the-two-phase-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="the-two-phase-workflow">The Two-Phase Workflow</h2>
 <p>The proposed workflow spans two phases. Phase one covers planning and pre-specification; phase two covers code development on synthetic data, extension to real data, interpretation, and final human review and disclosure.</p>
-<div class="centered-image">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/fig3_two_phase_workflow.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="figures/fig3_two_phase_workflow.png" class="img-fluid figure-img" style="width:90.0%"></p>
 <figcaption><strong>Figure 3.</strong> Two-phase workflow for responsible human-AI collaboration in quantitative data analysis.</figcaption>
 </figure>
 </div>
-</div>
-<section id="phase-one-planning-and-pre-specification" class="level4">
-<h4 class="anchored" data-anchor-id="phase-one-planning-and-pre-specification">Phase One: Planning and Pre-Specification</h4>
+<section id="phase-one-planning-and-pre-specification" class="level3">
+<h3 class="anchored" data-anchor-id="phase-one-planning-and-pre-specification">Phase One: Planning and Pre-Specification</h3>
 <p>The first phase establishes the analytical foundation before any code is written. The researcher articulates the research question, data structure, planned analytical approach, and known challenges independently. GenAI is then engaged as a reasoning coach, brought in to challenge and refine the researcher’s thinking, not to generate it.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -386,10 +318,10 @@ Tip
 <p>As shown here, any GenAI-generated suggestions should be critically evaluated by the researcher, including checking for hallucinations (plausible-sounding but incorrect information) and cross-referencing against trusted external sources such as biostatisticians and published literature. GenAI supplements, but does not replace, expert consultation.</p>
 <p>Once the analytical plan has been refined, it should be written down as a concise pre-specified analytic proposal and shared with the full research team for review and approval before any code runs.</p>
 </section>
-<section id="phase-two-execution-translation-and-disclosure" class="level4">
-<h4 class="anchored" data-anchor-id="phase-two-execution-translation-and-disclosure">Phase Two: Execution, Translation, and Disclosure</h4>
-<section id="build-the-synthetic-dataset" class="level5">
-<h5 class="anchored" data-anchor-id="build-the-synthetic-dataset">Build the Synthetic Dataset</h5>
+<section id="phase-two-execution-translation-and-disclosure" class="level3">
+<h3 class="anchored" data-anchor-id="phase-two-execution-translation-and-disclosure">Phase Two: Execution, Translation, and Disclosure</h3>
+<section id="build-the-synthetic-dataset" class="level4">
+<h4 class="anchored" data-anchor-id="build-the-synthetic-dataset">Build the Synthetic Dataset</h4>
 <p>A foundational principle of this workflow is the synthetic-data-first approach: the full analytical workflow is built and tested using privacy-safe <em>simulated data</em> before any real participant data are introduced. At no point is real participant data — including individual rows, values, or screenshots — shared with GenAI platforms.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -412,7 +344,7 @@ Note
 <li>Covariates: age (normal distribution, mean=55, SD=10); sex (Male/Female, with Female accounting for 70% of the sample, consistent with the aSAH literature); fisher_grade (categories 2, 3, 4 with probabilities 0.3, 0.4, 0.3)</li>
 <li>Additional variables: ID (sequential integer, 1-650); has_dnam (logical)</li>
 </ul>
-<p><strong>Variable names and types:</strong> ID (sequential integer, 1-650), age (numeric), sex (character: “male”/”female”), fisher_grade (integer: 2, 3, or 4), acute_headache (binary: 0/1 where 1=yes), persistent_headache (binary: 0/1 where 1=yes), has_dnam (logical: TRUE/FALSE), cg1-cg13 (numeric).</p>
+<p><strong>Variable names and types:</strong> ID (sequential integer, 1-650), age (numeric), sex (character: “male”/“female”), fisher_grade (integer: 2, 3, or 4), acute_headache (binary: 0/1 where 1=yes), persistent_headache (binary: 0/1 where 1=yes), has_dnam (logical: TRUE/FALSE), cg1-cg13 (numeric).</p>
 <p>Apply a fixed seed (set.seed(123)) to promote reproducibility.</p>
 </div>
 </div>
@@ -514,8 +446,8 @@ Tip
 </div>
 <p>Note that CpG M-values here were simulated from a uniform distribution (-2 to 2) purely to support pipeline development and testing, and does not reflect the bimodal distribution typically observed in real methylation data (M-values usually cluster near the extremes, reflecting hypo- and hyper-methylated CpG sites). This simplification was a deliberate choice for this synthetic-data stage; it should be revisited and validated against the true DNAm distribution once real data are available, before any inferential results are reported.</p>
 </section>
-<section id="explore-the-synthetic-data" class="level5">
-<h5 class="anchored" data-anchor-id="explore-the-synthetic-data">Explore the Synthetic Data</h5>
+<section id="explore-the-synthetic-data" class="level4">
+<h4 class="anchored" data-anchor-id="explore-the-synthetic-data">Explore the Synthetic Data</h4>
 <p>Before modeling, confirm the simulated data matches the intended structure — this check is done by the human, not delegated to GenAI.</p>
 <div class="cell" data-layout-align="center">
 <details open="" class="code-fold">
@@ -572,8 +504,8 @@ female   male
 </div>
 </div>
 </section>
-<section id="fit-the-analytic-model" class="level5">
-<h5 class="anchored" data-anchor-id="fit-the-analytic-model">Fit the Analytic Model</h5>
+<section id="fit-the-analytic-model" class="level4">
+<h4 class="anchored" data-anchor-id="fit-the-analytic-model">Fit the Analytic Model</h4>
 <p>Throughout code development, GenAI can be used for targeted tasks — drafting initial code, debugging error messages, refining and annotating existing code — with specific, bounded requests rather than open-ended rewrites. One of the most powerful applications of this targeted approach is using GenAI to build a reusable function — a task that is technically well-defined, involves no participant data, and produces efficient, reproducible code that can be applied across multiple models.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -800,7 +732,7 @@ Tip
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="tutorial_q_files/figure-html/forest-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="864"></p>
+<p><img src="tutorial_application_files/figure-html/forest-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="864"></p>
 </figure>
 </div>
 </div>
@@ -819,13 +751,13 @@ Important
 </div>
 </div>
 </section>
-<section id="extend-to-real-data" class="level5">
-<h5 class="anchored" data-anchor-id="extend-to-real-data">Extend to Real Data</h5>
+<section id="extend-to-real-data" class="level4">
+<h4 class="anchored" data-anchor-id="extend-to-real-data">Extend to Real Data</h4>
 <p>Once the pipeline has been built and validated on synthetic data, it can be extended to the real data by simply swapping the synthetic data import for the real one — no other changes to the code are needed. Because the synthetic and real datasets share identical structure, the code runs without modification in most cases. When issues arise, GenAI can assist with debugging by sharing error messages and relevant code, but never real data.</p>
 <p><em>(This step is illustrative only in this tutorial, since no real dataset is used here.)</em></p>
 </section>
-<section id="interpret-results" class="level5">
-<h5 class="anchored" data-anchor-id="interpret-results">Interpret Results</h5>
+<section id="interpret-results" class="level4">
+<h4 class="anchored" data-anchor-id="interpret-results">Interpret Results</h4>
 <p>Under the guiding principles in Table 1, GenAI is used to translate statistical output into plain language, but the researcher retains full interpretive authority. GenAI functions as a translator of numbers into words — it should not be used to determine clinical or scientific significance. That judgment belongs to the researcher, who brings domain expertise, knowledge of the study population, and understanding of the broader literature that no GenAI tool can replicate.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -897,18 +829,13 @@ Important
 </div>
 </div>
 </section>
-<section id="human-review-and-disclosure" class="level5">
-<h5 class="anchored" data-anchor-id="human-review-and-disclosure">Human Review and Disclosure</h5>
+<section id="human-review-and-disclosure" class="level4">
+<h4 class="anchored" data-anchor-id="human-review-and-disclosure">Human Review and Disclosure</h4>
 <p>The workflow closes with human review and transparent disclosure. A clean, reproducible report is generated from the scripted workflow, and all code is reviewed line by line by a human. Consistent with the transparency principle outlined in Table 1, GenAI involvement should be disclosed in all research products, including the specific tool used and the nature of its contributions.</p>
-</section>
-</section>
-</section>
-</section>
-<section id="generative-ai-disclosure" class="level2">
-<h2 class="anchored" data-anchor-id="generative-ai-disclosure">Generative AI Disclosure</h2>
-<p>This tutorial was developed by the authors, with generative AI (Claude, Anthropic) used throughout the preparation of this document, including drafting of the synthetic dataset code, R code annotations, and structuring of the tutorial narrative. All scientific content, analytic decisions, and code were reviewed and approved by the authors, who take full responsibility for the accuracy and integrity of this work.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1314,11 +1241,14 @@ Important
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Welcome">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Welcome</span></span>
+      <a href="./tutorial_code_of_conduct.html" class="pagination-link" aria-label="Code of Conduct">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Code of Conduct</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./tutorial_disclosure.html" class="pagination-link" aria-label="Generative AI Disclosure">
+        <span class="nav-page-text"><span class="chapter-title">Generative AI Disclosure</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
