@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Gina M. Gehling, PhD, RN &amp; Lacey W. Heinsberg, PhD, RN">
+
+<title>AI Genomics Workflow Tutorial – AI Genomics Workflow Tutorial</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4bd490e9cd57f2396cbd188312c0541c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-19911a0a46d5bac1acb3d52b00cf9496.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tutorial_q.html"><span class="chapter-title">AI Genomics Workflow Tutorial</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AI Genomics Workflow Tutorial</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorial_q.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">AI Genomics Workflow Tutorial</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#copyright" id="toc-copyright" class="nav-link active" data-scroll-target="#copyright">Copyright</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#code-of-conduct" id="toc-code-of-conduct" class="nav-link" data-scroll-target="#code-of-conduct">Code of Conduct</a></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application">Application</a>
+  <ul class="collapse">
+  <li><a href="#scenario" id="toc-scenario" class="nav-link" data-scroll-target="#scenario">Scenario</a></li>
+  <li><a href="#the-two-phase-workflow" id="toc-the-two-phase-workflow" class="nav-link" data-scroll-target="#the-two-phase-workflow">The Two-Phase Workflow</a></li>
+  </ul></li>
+  <li><a href="#generative-ai-disclosure" id="toc-generative-ai-disclosure" class="nav-link" data-scroll-target="#generative-ai-disclosure">Generative AI Disclosure</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">AI Genomics Workflow Tutorial</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Gina M. Gehling, PhD, RN &amp; Lacey W. Heinsberg, PhD, RN </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="copyright" class="level2">
+<h2 class="anchored" data-anchor-id="copyright">Copyright</h2>
+<p>Copyright 2026, University of Pittsburgh. All Rights Reserved.<br> License: GPL-2 (<a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html">link</a>)</p>
+</section>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Generative AI (GenAI) tools (e.g., Claude, Gemini) are systems capable of generating text, code, and other content in response to user prompts (Figure 1).</p>
+<p><img src="figures/fig1_genai_llm_gpt_relationship.png" class="img-fluid" style="width:70.0%" alt="Figure 1. Generative AI, LLMs, and GPTs: a nested relationship."> :::</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>⚠ THIS TUTORIAL USES SYNTHETIC DATA. ⚠</strong></p>
+<p>Every value generated and analyzed below is randomly simulated and does <strong>not</strong> represent any real research participant. This document exists solely to demonstrate the <em>structure of the data</em> and the <em>analytical code</em> used in the workflow, so that the pipeline is transparent and reproducible.</p>
+</div>
+</div>
+</section>
+<section id="code-of-conduct" class="level2">
+<h2 class="anchored" data-anchor-id="code-of-conduct">Code of Conduct</h2>
+<p>For nurse scientists operating at the intersection of clinical care and research, using GenAI thoughtfully begins with GenAI literacy—an increasingly essential professional competency. GenAI literacy is defined here as having the knowledge and skills to use GenAI tools effectively, responsibly, and ethically to accomplish tasks. We conceptualize GenAI literacy across three core dimensions: technical, practical, and ethical (Figure 2).</p>
+<p><img src="figures/fig2_genai_literacy_framework.png" class="img-fluid" style="width:70.0%" alt="Figure 2. Framework for GenAI literacy to guide responsible use."> :::</p>
+<p>Before beginning, we review an example analytic code of conduct for responsible GenAI collaboration, built around those three dimensions of GenAI literacy (Table 1). These examples are offered not as prescriptive rules but as illustrative examples; individuals are encouraged to adapt them to their own values, research context, and institutional policies.</p>
+<p><strong>Table 1.</strong> Example analytic code of conduct for GenAI use.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Principle</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Build competence before reliance</td>
+<td>Prioritize understanding statistical and programming concepts before using GenAI-generated code</td>
+</tr>
+<tr class="even">
+<td>Respect data privacy</td>
+<td>Do not upload real participant data (use synthetic data during code development)</td>
+</tr>
+<tr class="odd">
+<td>Maintain objectivity</td>
+<td>Critically evaluate GenAI output (check for hallucinations and misapplied methods)</td>
+</tr>
+<tr class="even">
+<td>Retain interpretive authority</td>
+<td>GenAI can translate statistical output into plain language, but humans determine clinical and scientific significance</td>
+</tr>
+<tr class="odd">
+<td>Be transparent</td>
+<td>Disclose GenAI involvement in code, figures, and manuscripts</td>
+</tr>
+<tr class="even">
+<td>Revisit ethics and policy</td>
+<td>Frequently revisit GenAI ethics through regular self-reflection as norms evolve rapidly</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Core principle:</strong> GenAI is a tool, not a decision-maker. Humans retain full interpretive authority over every analytic decision in this workflow.</p>
+</div>
+</div>
+</section>
+<section id="application" class="level2">
+<h2 class="anchored" data-anchor-id="application">Application</h2>
+<p>The principles outlined in Table 1 are exemplified through the following nursing-focused genomic research example.</p>
+<section id="scenario" class="level3">
+<h3 class="anchored" data-anchor-id="scenario">Scenario</h3>
+<p>Imagine a research team conducting a study to examine whether DNA methylation (DNAm — a chemical modification to DNA that can influence gene expression without changing the underlying sequence) in the <em>ABC</em> gene is associated with patient-reported headache outcomes following aneurysmal subarachnoid hemorrhage (aSAH), a type of stroke caused by bleeding into the space surrounding the brain.</p>
+<p>The study builds on an existing aSAH cohort of 650 patients, with genome-wide DNAm data available for a subset of 200. The outcomes of interest are two patient-reported headache measures:</p>
+<ul>
+<li><strong>Acute headache</strong> — moderate-to-severe headache reported during hospitalization</li>
+<li><strong>Persistent headache</strong> — moderate-to-severe headache reported at follow-up</li>
+</ul>
+<p>Acute and persistent headache were each coded as binary (0 = absent, 1 = present), with “present” defined as a patient-reported pain score of ≥4 on an 11-point numeric rating scale (0 = no pain, 10 = worst pain imaginable), consistent with a moderate-to-severe threshold. The analytical models examine whether DNAm levels at 13 specific sites in the <em>ABC</em> gene (measured as M-values, a continuous measure of methylation intensity) predict acute and persistent headache status, adjusting for age, sex, and Fisher grade (a clinical measure of stroke severity based on the amount of blood seen on initial brain imaging).</p>
+<p>DNAm here reflects peripheral blood methylation, a common and accessible proxy in biobehavioral nursing research, though not a direct measure of central pain pathways. In this example study, the <em>ABC</em> gene and the 13 CpG sites were selected a priori based on prior literature and their location within known regulatory regions. This reflects a candidate-gene approach rather than exploratory design.</p>
+</section>
+<section id="the-two-phase-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="the-two-phase-workflow">The Two-Phase Workflow</h3>
+<p>The proposed workflow spans two phases. Phase one covers planning and pre-specification; phase two covers code development on synthetic data, extension to real data, interpretation, and final human review and disclosure.</p>
+<div class="centered-image">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/fig3_two_phase_workflow.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption><strong>Figure 3.</strong> Two-phase workflow for responsible human-AI collaboration in quantitative data analysis.</figcaption>
+</figure>
+</div>
+</div>
+<section id="phase-one-planning-and-pre-specification" class="level4">
+<h4 class="anchored" data-anchor-id="phase-one-planning-and-pre-specification">Phase One: Planning and Pre-Specification</h4>
+<p>The first phase establishes the analytical foundation before any code is written. The researcher articulates the research question, data structure, planned analytical approach, and known challenges independently. GenAI is then engaged as a reasoning coach, brought in to challenge and refine the researcher’s thinking, not to generate it.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>AI Example Prompt 1: Assigning GenAI the role of critical reviewer during planning.</strong></p>
+<p><strong>Role:</strong> you are a senior biostatistician with expertise in statistical genomics, R programming, and epigenetics.</p>
+<p><strong>Task:</strong> act as a critical reviewer of the analytical plan described below. Identify weaknesses, potential confounders, and power concerns. List the pros and cons of alternative approaches rather than recommending a single fix. Do not write any code.</p>
+<p><strong>Study context:</strong> I am designing a study examining whether DNA methylation (DNAm) at 13 CpG sites in the ABC gene predicts patient-reported headache outcomes following aneurysmal subarachnoid hemorrhage (aSAH). I have mapped out an analytical plan, and the purpose of this interaction is to stress test, refine, and improve it before pre-specifying it with my team.</p>
+<p><strong>Analytical plan:</strong></p>
+<ul>
+<li>Outcomes: acute headache and persistent headache…</li>
+<li>Primary predictor: DNAm M-value…</li>
+<li>Covariates: age (continuous)…</li>
+<li>Model: binary logistic regression…</li>
+<li>Multiple testing: Bonferroni correction applied</li>
+<li>Sample: N=650 total; n=200 with DNAm data available</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>AI Response (illustrative):</strong> A few things worth stress-testing: (1) with n=200 for the DNAm subset, statistical power to detect small methylation effects after Bonferroni correction across 26 tests may be limited — consider reporting effect sizes and confidence intervals alongside p-values, not p-values alone; (2) Fisher grade and age may be correlated with both DNAm patterns and headache severity — confirm this isn’t masking or inflating the DNAm association; (3) an alternative to per-site Bonferroni correction would be a false discovery rate (FDR) approach, which is less conservative and common in epigenome-wide analyses — worth discussing with your biostatistician which is more defensible for your design.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Follow-up prompt (illustrating iterative exchange):</strong></p>
+<p>Thank you — helpful points. On the power concern: we unfortunately do not have the ability to increase n at this stage, so will proceed with n=200 and plan to report effect sizes and CIs throughout. On the multiple testing question: I discussed FDR vs.&nbsp;Bonferroni with our biostatistician and we decided to use Bonferroni given the candidate-gene design and small number of tests. Can you help me think through whether there are any additional covariates I should consider beyond age, sex, and Fisher grade?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>AI Response (illustrative):</strong> Given the aSAH context, a few additional covariates worth considering: (1) time from aSAH onset to DNAm sample collection, since methylation patterns can shift acutely after neurological injury; (2) medication use at time of sampling, particularly corticosteroids or antiepileptics, which are known to influence DNA methylation; (3) Glasgow Outcome Scale score or clinical severity at discharge, which may confound both headache outcomes and DNAm patterns. Whether to include these depends on availability in your dataset and your pre-specified model — worth flagging in your analytic proposal even if you decide not to adjust for them.</p>
+</div>
+</div>
+<p><em>(The conversation continues.)</em></p>
+<p>As shown here, any GenAI-generated suggestions should be critically evaluated by the researcher, including checking for hallucinations (plausible-sounding but incorrect information) and cross-referencing against trusted external sources such as biostatisticians and published literature. GenAI supplements, but does not replace, expert consultation.</p>
+<p>Once the analytical plan has been refined, it should be written down as a concise pre-specified analytic proposal and shared with the full research team for review and approval before any code runs.</p>
+</section>
+<section id="phase-two-execution-translation-and-disclosure" class="level4">
+<h4 class="anchored" data-anchor-id="phase-two-execution-translation-and-disclosure">Phase Two: Execution, Translation, and Disclosure</h4>
+<section id="build-the-synthetic-dataset" class="level5">
+<h5 class="anchored" data-anchor-id="build-the-synthetic-dataset">Build the Synthetic Dataset</h5>
+<p>A foundational principle of this workflow is the synthetic-data-first approach: the full analytical workflow is built and tested using privacy-safe <em>simulated data</em> before any real participant data are introduced. At no point is real participant data — including individual rows, values, or screenshots — shared with GenAI platforms.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>AI Example Prompt 2: Synthetic data generation.</strong></p>
+<p><strong>Role:</strong> you are an experienced R programmer and biostatistician specializing in epigenetic data workflows.</p>
+<p><strong>Task:</strong> create an RMarkdown file with annotated code to a generate synthetic dataset matching the structure described below. The purpose of this synthetic dataset is to serve as a privacy-safe substitute for real participant data during analytical code development. Provide inline comments explaining each step and the reasoning behind key distributional choices. Ask me questions if I have missed something that you need in the prompt below.</p>
+<p><strong>Dataset structure:</strong></p>
+<ul>
+<li>Full sample of N=650, with a subset of n=200 having DNAm data available (indicated by a variable called has_dnam)</li>
+<li>CpG M-values: generate cg1-cg13 only for has_dnam=TRUE participants, drawn from a uniform distribution ranging from -2 to 2; all others should have NA</li>
+<li>Outcomes: acute_headache (binary, 25% prevalence); persistent_headache (binary, 30% prevalence)</li>
+<li>Covariates: age (normal distribution, mean=55, SD=10); sex (Male/Female, with Female accounting for 70% of the sample, consistent with the aSAH literature); fisher_grade (categories 2, 3, 4 with probabilities 0.3, 0.4, 0.3)</li>
+<li>Additional variables: ID (sequential integer, 1-650); has_dnam (logical)</li>
+</ul>
+<p><strong>Variable names and types:</strong> ID (sequential integer, 1-650), age (numeric), sex (character: “male”/”female”), fisher_grade (integer: 2, 3, or 4), acute_headache (binary: 0/1 where 1=yes), persistent_headache (binary: 0/1 where 1=yes), has_dnam (logical: TRUE/FALSE), cg1-cg13 (numeric).</p>
+<p>Apply a fixed seed (set.seed(123)) to promote reproducibility.</p>
+</div>
+</div>
+<p>Note the level of detail in this prompt: every variable, distribution, and parameter is explicitly defined. These specification decisions are best made collaboratively with a biostatistician or research team before writing the prompt, mirroring the pre-specification process from Phase One. GenAI executes decisions the team has already made; it does not make them.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>AI Response (illustrative):</strong> Here’s R code that builds the cohort in two stages — first the full N=650 sample with covariates and outcomes, then the 200-person DNAm subset with CpG M-values — so the <code>has_dnam</code> flag correctly reflects which rows carry methylation data.</p>
+<p><code>set.seed(123)  # ensures reproducibility</code></p>
+<p><code>N &lt;- 650        # full cohort size</code> <code>n_dnam &lt;- 200   # subset with DNAm data available</code></p>
+<p><code># --- Step 1: Generate baseline cohort (N = 650) ---</code> <code>df &lt;- data.frame(</code> <code>ID = 1:N,</code> <code>age = round(rnorm(N, mean = 55, sd = 10), 0),</code> <code>sex = sample(c("male", "female"), N, replace = TRUE, prob = c(0.3, 0.7)),</code> <code>fisher_grade = sample(c(2, 3, 4), N, replace = TRUE, prob = c(0.3, 0.4, 0.3)),</code> <code>acute_headache = rbinom(N, 1, 0.25),</code> <code>persistent_headache = rbinom(N, 1, 0.30)</code> <code>)</code></p>
+<p><code># --- Step 2: Flag which participants have DNAm data (n = 200 subset) ---</code><br>
+[Etc, etc.]</p>
+</div>
+</div>
+<p>Pasting in the GenAI output into our R markdown we can then easily produce a fully synthetic dataset!</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># ensures reproducibility</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">650</span>        <span class="co"># full cohort size</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>n_dnam <span class="ot">&lt;-</span> <span class="dv">200</span>   <span class="co"># subset with DNAm data available</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Step 1: Generate baseline cohort (N = 650) ---</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">ID =</span> <span class="dv">1</span><span class="sc">:</span>N,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(N, <span class="at">mean =</span> <span class="dv">55</span>, <span class="at">sd =</span> <span class="dv">10</span>), <span class="dv">0</span>),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">sex =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"male"</span>, <span class="st">"female"</span>), N, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.7</span>)),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">fisher_grade =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>), N, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.3</span>)),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">acute_headache =</span> <span class="fu">rbinom</span>(N, <span class="dv">1</span>, <span class="fl">0.25</span>),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">persistent_headache =</span> <span class="fu">rbinom</span>(N, <span class="dv">1</span>, <span class="fl">0.30</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Step 2: Flag which participants have DNAm data (n = 200 subset) ---</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>dnam_ids <span class="ot">&lt;-</span> <span class="fu">sample</span>(df<span class="sc">$</span>ID, n_dnam)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>has_dnam <span class="ot">&lt;-</span> df<span class="sc">$</span>ID <span class="sc">%in%</span> dnam_ids</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Step 3: Generate 13 CpG site M-values, DNAm subset only ---</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Participants without DNAm data get NA for all cg1-cg13 columns</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>cpg_names <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"cg"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">13</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (cpg <span class="cf">in</span> cpg_names) {</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  df[[cpg]] <span class="ot">&lt;-</span> <span class="cn">NA_real_</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  df[[cpg]][df<span class="sc">$</span>has_dnam] <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="fu">sum</span>(df<span class="sc">$</span>has_dnam), <span class="at">min =</span> <span class="sc">-</span><span class="dv">2</span>, <span class="at">max =</span> <span class="dv">2</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Preview the structure</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df[, <span class="fu">c</span>(<span class="st">"ID"</span>, <span class="st">"age"</span>, <span class="st">"sex"</span>, <span class="st">"fisher_grade"</span>, <span class="st">"acute_headache"</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>           <span class="st">"persistent_headache"</span>, <span class="st">"has_dnam"</span>, <span class="st">"cg1"</span>, <span class="st">"cg2"</span>)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   650 obs. of  9 variables:
+ $ ID                 : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ age                : num  49 53 71 56 56 72 60 42 48 51 ...
+ $ sex                : chr  "female" "female" "female" "male" ...
+ $ fisher_grade       : num  3 2 3 3 4 4 3 2 4 3 ...
+ $ acute_headache     : int  0 0 0 1 0 0 0 0 0 0 ...
+ $ persistent_headache: int  0 0 0 0 1 0 0 1 1 0 ...
+ $ has_dnam           : logi  TRUE FALSE FALSE FALSE TRUE FALSE ...
+ $ cg1                : num  -0.223 NA NA NA 1.351 ...
+ $ cg2                : num  1.245 NA NA NA 0.795 ...</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  ID age    sex fisher_grade acute_headache persistent_headache has_dnam
+1  1  49 female            3              0                   0     TRUE
+2  2  53 female            2              0                   0    FALSE
+3  3  71 female            3              0                   0    FALSE
+4  4  56   male            3              1                   0    FALSE
+5  5  56   male            4              0                   1     TRUE
+6  6  72 female            4              0                   0    FALSE
+         cg1       cg2       cg3        cg4        cg5     cg6         cg7
+1 -0.2234922 1.2449797 0.6383710 -0.6388782 -0.8132949 1.24518 -0.02442685
+2         NA        NA        NA         NA         NA      NA          NA
+3         NA        NA        NA         NA         NA      NA          NA
+4         NA        NA        NA         NA         NA      NA          NA
+5  1.3511896 0.7947385 0.9384728 -1.9266363  0.1682752 1.46697 -1.98117499
+6         NA        NA        NA         NA         NA      NA          NA
+       cg8       cg9      cg10       cg11      cg12       cg13
+1 1.883021 0.4790729 -1.028751 -1.5615095  1.673320 -0.3613391
+2       NA        NA        NA         NA        NA         NA
+3       NA        NA        NA         NA        NA         NA
+4       NA        NA        NA         NA        NA         NA
+5 1.170122 0.2609439  1.377999  0.5259716 -1.465267  1.5419934
+6       NA        NA        NA         NA        NA         NA</code></pre>
+</div>
+</div>
+<p>Note that CpG M-values here were simulated from a uniform distribution (-2 to 2) purely to support pipeline development and testing, and does not reflect the bimodal distribution typically observed in real methylation data (M-values usually cluster near the extremes, reflecting hypo- and hyper-methylated CpG sites). This simplification was a deliberate choice for this synthetic-data stage; it should be revisited and validated against the true DNAm distribution once real data are available, before any inferential results are reported.</p>
+</section>
+<section id="explore-the-synthetic-data" class="level5">
+<h5 class="anchored" data-anchor-id="explore-the-synthetic-data">Explore the Synthetic Data</h5>
+<p>Before modeling, confirm the simulated data matches the intended structure — this check is done by the human, not delegated to GenAI.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Confirm cohort sizes</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(df<span class="sc">$</span>has_dnam)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+FALSE  TRUE 
+  450   200 </code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Distribution of covariates</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df<span class="sc">$</span>age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  27.00   49.00   55.00   55.06   62.00   87.00 </code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(df<span class="sc">$</span>sex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+female   male 
+   453    197 </code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(df<span class="sc">$</span>fisher_grade)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  2   3   4 
+190 266 194 </code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Outcome prevalence</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df<span class="sc">$</span>acute_headache)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2523077</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df<span class="sc">$</span>persistent_headache)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3015385</code></pre>
+</div>
+</div>
+</section>
+<section id="fit-the-analytic-model" class="level5">
+<h5 class="anchored" data-anchor-id="fit-the-analytic-model">Fit the Analytic Model</h5>
+<p>Throughout code development, GenAI can be used for targeted tasks — drafting initial code, debugging error messages, refining and annotating existing code — with specific, bounded requests rather than open-ended rewrites. One of the most powerful applications of this targeted approach is using GenAI to build a reusable function — a task that is technically well-defined, involves no participant data, and produces efficient, reproducible code that can be applied across multiple models.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>AI Example Prompt 3: Assigning GenAI the role of code developer for the primary regression analysis.</strong></p>
+<p>Role: you are an experienced R programmer and biostatistician specializing in epigenetic data workflows.</p>
+<p>Task: using the synthetic dataset generated in our previous exchange, write annotated R code to run the primary regression analyses described below. Build the code in small, testable chunks and include inline comments explaining each step. Do not modify the dataset or introduce new variables.</p>
+<p>Analysis specifications:</p>
+<ul>
+<li>Run binary logistic regression models for each of 13 CpG sites (cg1–cg13) × 2 outcomes (acute_headache, persistent_headache) = 26 models total; implement this as a reusable R function rather than a loop, to promote code efficiency and reusability</li>
+<li>Model formula for each: outcome ~ CpG_Mvalue + age + sex + fisher_grade, using the DNAm subset only (has_dnam=TRUE)</li>
+<li>For each model, extract the following for the DNAm term only: odds ratio (exponentiated coefficient), 95% confidence interval (exponentiated), and p-value</li>
+<li>Apply Bonferroni correction across the 13 tests within each outcome (corrected significance threshold = 0.05/13 ≈ 0.0038)</li>
+<li>Organize all results into a single clean summary table with columns: CpG site, outcome, odds ratio, lower 95% CI, upper 95% CI, p-value, Bonferroni-corrected significance (yes/no); write that file as an excel document</li>
+</ul>
+<p>Output: the final summary table should be print-ready and suitable for inclusion in a manuscript.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>AI Response (illustrative):</strong> Here is a reusable function <code>run_cpg_model()</code> that fits one logistic regression model given a CpG site name and outcome name, extracts the DNAm term, and returns a tidy results row. Wrapping the logic in a function keeps the code modular and easy to debug one model at a time before scaling to all 26.</p>
+</div>
+</div>
+<p>Good coding practice is to write a little, run it, check the output, then build from there. The code below first fits a single representative model (cg1 → acute headache) to confirm everything works as intended, then scales up using a reusable function across all 13 CpG sites and both outcomes.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Restrict to the DNAm subset for all models</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>df_dnam <span class="ot">&lt;-</span> <span class="fu">subset</span>(df, has_dnam)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Fit one model first to confirm the code works before scaling up</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Logistic regression: acute headache ~ DNAm M-value (cg1) + covariates</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>model_acute_cg1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  acute_headache <span class="sc">~</span> cg1 <span class="sc">+</span> age <span class="sc">+</span> sex <span class="sc">+</span> fisher_grade,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> df_dnam,</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> binomial</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_acute_cg1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = acute_headache ~ cg1 + age + sex + fisher_grade, 
+    family = binomial, data = df_dnam)
+
+Coefficients:
+             Estimate Std. Error z value Pr(&gt;|z|)  
+(Intercept)  -1.54076    1.17397  -1.312   0.1894  
+cg1           0.02258    0.16015   0.141   0.8879  
+age          -0.02492    0.01767  -1.410   0.1585  
+sexmale       0.64484    0.35040   1.840   0.0657 .
+fisher_grade  0.47633    0.22585   2.109   0.0349 *
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 220.43  on 199  degrees of freedom
+Residual deviance: 211.30  on 195  degrees of freedom
+AIC: 221.3
+
+Number of Fisher Scoring iterations: 4</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Build a reusable function to run one model and extract results</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is more efficient than copy-pasting code 26 times</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>run_cpg_model <span class="ot">&lt;-</span> <span class="cf">function</span>(cpg, outcome, data) {</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Build the model formula dynamically</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  formula <span class="ot">&lt;-</span> <span class="fu">as.formula</span>(<span class="fu">paste</span>(outcome, <span class="st">"~"</span>, cpg, <span class="st">"+ age + sex + fisher_grade"</span>))</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Fit logistic regression</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  mod <span class="ot">&lt;-</span> <span class="fu">glm</span>(formula, <span class="at">data =</span> data, <span class="at">family =</span> binomial)</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Extract results for the DNAm term only</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  coef_table <span class="ot">&lt;-</span> <span class="fu">summary</span>(mod)<span class="sc">$</span>coefficients</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  dnAm_row <span class="ot">&lt;-</span> coef_table[cpg, ]</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Return a tidy results row</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">cpg_site =</span> cpg,</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">outcome =</span> outcome,</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">odds_ratio =</span> <span class="fu">exp</span>(dnAm_row[<span class="st">"Estimate"</span>]),</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">ci_lower =</span> <span class="fu">exp</span>(dnAm_row[<span class="st">"Estimate"</span>] <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> dnAm_row[<span class="st">"Std. Error"</span>]),</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">ci_upper =</span> <span class="fu">exp</span>(dnAm_row[<span class="st">"Estimate"</span>] <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> dnAm_row[<span class="st">"Std. Error"</span>]),</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">p_value =</span> dnAm_row[<span class="st">"Pr(&gt;|z|)"</span>]</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Apply the function across all 13 CpG sites and 2 outcomes</span></span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>cpg_sites <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"cg"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">13</span>)</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>outcomes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"acute_headache"</span>, <span class="st">"persistent_headache"</span>)</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Run all 26 models and combine results into a single table</span></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, <span class="fu">lapply</span>(outcomes, <span class="cf">function</span>(outcome) {</span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">do.call</span>(rbind, <span class="fu">lapply</span>(cpg_sites, <span class="cf">function</span>(cpg) {</span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">run_cpg_model</span>(cpg, outcome, df_dnam)</span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>  }))</span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>}))</span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: Apply Bonferroni correction within each outcome (0.05/13 ≈ 0.0038)</span></span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>results<span class="sc">$</span>bonferroni_significant <span class="ot">&lt;-</span> results<span class="sc">$</span>p_value <span class="sc">&lt;</span> (<span class="fl">0.05</span> <span class="sc">/</span> <span class="dv">13</span>)</span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a><span class="co"># View results</span></span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(results)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>          cpg_site        outcome odds_ratio  ci_lower ci_upper   p_value
+Estimate       cg1 acute_headache  1.0228416 0.7472824 1.400013 0.8878539
+Estimate1      cg2 acute_headache  0.7766494 0.5727744 1.053092 0.1037335
+Estimate2      cg3 acute_headache  0.9061137 0.6745515 1.217167 0.5126078
+Estimate3      cg4 acute_headache  1.1820981 0.8846981 1.579472 0.2578711
+Estimate4      cg5 acute_headache  0.8526302 0.6434026 1.129896 0.2670676
+Estimate5      cg6 acute_headache  1.0651724 0.7831019 1.448844 0.6874902
+          bonferroni_significant
+Estimate                   FALSE
+Estimate1                  FALSE
+Estimate2                  FALSE
+Estimate3                  FALSE
+Estimate4                  FALSE
+Estimate5                  FALSE</code></pre>
+</div>
+</div>
+<p><em>(The full results table, including all 26 models, is generated by applying the function across all CpG sites and outcomes as shown above.)</em></p>
+<p>GenAI can also help us enhance communication by helping draft publication-quality figures. For example, the forest plot below was generated using code developed with GenAI assistance.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>AI Example Prompt (bonus): Assigning GenAI the role of figure developer.</strong></p>
+<p><strong>Role:</strong> you are an experienced R programmer and biostatistician specializing in epigenetic data workflows.</p>
+<p><strong>Task:</strong> using the <code>results</code> object generated in our previous exchange, write annotated R code to create a forest plot displaying the odds ratios and 95% confidence intervals for the DNAm predictor across all 26 models. The plot should:</p>
+<ul>
+<li>Display one row per model (CpG site × outcome combination)</li>
+<li>Facet by outcome (acute_headache vs.&nbsp;persistent_headache)</li>
+<li>Include a vertical reference line at OR = 1.0</li>
+<li>Use three levels of visual emphasis based on significance: gray open circles for non-significant results (p ≥ 0.05), blue filled circles for nominally significant results (p &lt; 0.05), and purple filled circles for Bonferroni-significant results (p &lt; 0.0038); include a legend</li>
+<li>Use clean, publication-ready formatting with minimal theme</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>AI Response (illustrative):</strong> Here is ggplot2 code that facets by outcome and uses three levels of visual emphasis: gray open circles for non-significant results, blue filled circles for nominally significant results, and purple filled circles for Bonferroni-significant results.</p>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>results_plot <span class="ot">&lt;-</span> results</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>results_plot<span class="sc">$</span>cpg_site <span class="ot">&lt;-</span> <span class="fu">factor</span>(results_plot<span class="sc">$</span>cpg_site,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">levels =</span> <span class="fu">paste0</span>(<span class="st">"cg"</span>, <span class="dv">13</span><span class="sc">:</span><span class="dv">1</span>))</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>results_plot<span class="sc">$</span>outcome_label <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(results_plot<span class="sc">$</span>outcome <span class="sc">==</span> <span class="st">"acute_headache"</span>,</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Acute Headache"</span>,</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Persistent Headache"</span>)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Flag nominal significance (p &lt; 0.05) separately from Bonferroni</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>results_plot<span class="sc">$</span>significance <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(results_plot<span class="sc">$</span>bonferroni_significant, </span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"Bonferroni significant (p &lt; 0.0038)"</span>,</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>                              <span class="fu">ifelse</span>(results_plot<span class="sc">$</span>p_value <span class="sc">&lt;</span> <span class="fl">0.05</span>,</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"Nominally significant (p &lt; 0.05)"</span>,</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"Not significant (p ≥ 0.05)"</span>))</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(results_plot, <span class="fu">aes</span>(<span class="at">x =</span> odds_ratio, <span class="at">y =</span> cpg_site,</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>                          <span class="at">color =</span> significance,</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>                          <span class="at">shape =</span> significance)) <span class="sc">+</span></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbarh</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> ci_lower, <span class="at">xmax =</span> ci_upper), <span class="at">height =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"gray50"</span>) <span class="sc">+</span></span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> outcome_label) <span class="sc">+</span></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Not significant (p ≥ 0.05)"</span> <span class="ot">=</span> <span class="st">"gray70"</span>,</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Nominally significant (p &lt; 0.05)"</span> <span class="ot">=</span> <span class="st">"#2c5f8a"</span>,</span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Bonferroni significant (p &lt; 0.0038)"</span> <span class="ot">=</span> <span class="st">"#6B2C5F"</span>),</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_shape_manual</span>(</span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Not significant (p ≥ 0.05)"</span> <span class="ot">=</span> <span class="dv">1</span>,</span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Nominally significant (p &lt; 0.05)"</span> <span class="ot">=</span> <span class="dv">16</span>,</span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Bonferroni significant (p &lt; 0.0038)"</span> <span class="ot">=</span> <span class="dv">16</span>),</span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Odds Ratio (95% CI)"</span>,</span>
+<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"CpG Site"</span>,</span>
+<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Dashed line = OR of 1.0. Blue = nominally significant (p &lt; 0.05); purple = Bonferroni significant (p &lt; 0.0038).</span><span class="sc">\n</span><span class="st">Note: these are synthetic data — no results are expected to reach significance."</span>) <span class="sc">+</span></span>
+<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"#6B2C5F"</span>),</span>
+<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#6B2C5F"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="tutorial_q_files/figure-html/forest-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="864"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Key takeaway:</strong> Real participant data were never shared with GenAI. The function was built and validated entirely on synthetic data. When the real dataset is swapped in, this code runs without modification because it was written for a data structure, not a specific file.</p>
+</div>
+</div>
+</section>
+<section id="extend-to-real-data" class="level5">
+<h5 class="anchored" data-anchor-id="extend-to-real-data">Extend to Real Data</h5>
+<p>Once the pipeline has been built and validated on synthetic data, it can be extended to the real data by simply swapping the synthetic data import for the real one — no other changes to the code are needed. Because the synthetic and real datasets share identical structure, the code runs without modification in most cases. When issues arise, GenAI can assist with debugging by sharing error messages and relevant code, but never real data.</p>
+<p><em>(This step is illustrative only in this tutorial, since no real dataset is used here.)</em></p>
+</section>
+<section id="interpret-results" class="level5">
+<h5 class="anchored" data-anchor-id="interpret-results">Interpret Results</h5>
+<p>Under the guiding principles in Table 1, GenAI is used to translate statistical output into plain language, but the researcher retains full interpretive authority. GenAI functions as a translator of numbers into words — it should not be used to determine clinical or scientific significance. That judgment belongs to the researcher, who brings domain expertise, knowledge of the study population, and understanding of the broader literature that no GenAI tool can replicate.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>AI Example Prompt 4: Assigning GenAI the role of statistical translator.</strong></p>
+<p>Role: you are a senior biostatistician with expertise in statistical genomics, R programming, and epigenetics.</p>
+<p>Task: translate the statistical results below into plain language including what the odds ratios, confidence intervals, and p-values mean in the context of this specific model, including the direction and magnitude of the association and what the reference category is.</p>
+<p>Boundary: do not comment on clinical meaning, significance for patient care, or implications for nursing practice; that interpretation belongs to the research team. Limit your response to what the numbers mean statistically.</p>
+<p>[paste model output]</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = acute_headache ~ cg1 + age + sex + fisher_grade, 
+    family = binomial, data = df_dnam)
+
+Coefficients:
+             Estimate Std. Error z value Pr(&gt;|z|)  
+(Intercept)  -1.54076    1.17397  -1.312   0.1894  
+cg1           0.02258    0.16015   0.141   0.8879  
+age          -0.02492    0.01767  -1.410   0.1585  
+sexmale       0.64484    0.35040   1.840   0.0657 .
+fisher_grade  0.47633    0.22585   2.109   0.0349 *
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 220.43  on 199  degrees of freedom
+Residual deviance: 211.30  on 195  degrees of freedom
+AIC: 221.3
+
+Number of Fisher Scoring iterations: 4</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>AI Response (illustrative):</strong> For cg1, the log-odds coefficient is 0.023, which converts to an odds ratio of approximately 1.02 (95% CI: approximately 0.75–1.40). This indicates that for each one-unit increase in DNAm M-value at cg1, the estimated odds of acute headache increase by about 2%, holding all other variables constant. The p-value is 0.89, which is far above any conventional significance threshold. The reference category for sex is ‘female’ — the sexmale coefficient (0.64, p=0.066) represents the difference in log-odds for males relative to females, converting to an odds ratio of approximately 1.91. Fisher grade has a positive coefficient (0.48, p=0.035), converting to an odds ratio of approximately 1.61 per one-unit increase in grade. Age shows a small negative coefficient (-0.025, p=0.16), converting to an odds ratio of approximately 0.98 per one-year increase.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Retain interpretive authority:</strong> this prompt illustrates the ‘retain interpretive authority’ principle in action. GenAI translates the numbers into words — the researcher decides what those words mean for patients, populations, and nursing practice. For researchers at any career stage, making this boundary explicit in the prompt itself is better than leaving it implicit.</p>
+</div>
+</div>
+</section>
+<section id="human-review-and-disclosure" class="level5">
+<h5 class="anchored" data-anchor-id="human-review-and-disclosure">Human Review and Disclosure</h5>
+<p>The workflow closes with human review and transparent disclosure. A clean, reproducible report is generated from the scripted workflow, and all code is reviewed line by line by a human. Consistent with the transparency principle outlined in Table 1, GenAI involvement should be disclosed in all research products, including the specific tool used and the nature of its contributions.</p>
+</section>
+</section>
+</section>
+</section>
+<section id="generative-ai-disclosure" class="level2">
+<h2 class="anchored" data-anchor-id="generative-ai-disclosure">Generative AI Disclosure</h2>
+<p>This tutorial was developed by the authors, with generative AI (Claude, Anthropic) used throughout the preparation of this document, including drafting of the synthetic dataset code, R code annotations, and structuring of the tutorial narrative. All scientific content, analytic decisions, and code were reviewed and approved by the authors, who take full responsibility for the accuracy and integrity of this work.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Welcome">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Welcome</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
