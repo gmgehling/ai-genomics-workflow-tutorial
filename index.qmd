@@ -1,0 +1,22 @@
+# Welcome
+
+This is the companion tutorial for:
+
+Gehling GM, Heinsberg LW. *Partnering with Generative Artificial Intelligence for Quantitative Data Analysis in Nursing Research: A Practical Workflow for Ethical Collaboration.* Biological Research for Nursing. Submitted 2026.
+
+**Copyright 2026, University of Pittsburgh. All Rights Reserved.**  
+License: GPL-2 ([link](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html))
+
+::: {.callout-caution}
+## ⚠ This Tutorial Uses Synthetic Data
+Every value generated and analyzed in this tutorial is randomly simulated and does **not** represent any real research participant. This document exists solely to demonstrate the *structure of the data* and the *analytical code* used in the workflow, so that the pipeline is transparent and reproducible.
+:::
+
+## How to Use This Tutorial
+
+Navigate using the table of contents on the left. The tutorial walks through a two-phase workflow for responsible human-GenAI collaboration in quantitative data analysis, illustrated through a nursing-focused genomic research example.
+
+## Contact
+
+Gina M. Gehling: gmg153@pitt.edu  
+Lacey W. Heinsberg: law145@pitt.edu
