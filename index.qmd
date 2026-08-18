@@ -27,7 +27,7 @@ Every value generated and analyzed in this tutorial is randomly simulated and do
 
 ## Source Code
 
-This tutorial's source code is maintained separately from this site and is publicly available on GitHub at https://github.com/gmgehling/ai-genomics-workflow-tutorial.
+This tutorial's source code is maintained separately from this site and is publicly available on GitHub at [https://github.com/gmgehling/ai-genomics-workflow-tutorial](https://github.com/gmgehling/ai-genomics-workflow-tutorial).
 
 ## Contact
 
