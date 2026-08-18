@@ -249,17 +249,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="phase-one-planning-and-pre-specification" class="level3">
 <h3 class="anchored" data-anchor-id="phase-one-planning-and-pre-specification">Phase One: Planning and Pre-Specification</h3>
 <p>The first phase establishes the analytical foundation before any code is written. The researcher articulates the research question, data structure, planned analytical approach, and known challenges independently. GenAI is then engaged as a reasoning coach, brought in to challenge and refine the researcher’s thinking, not to generate it.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>In this first example, we assign GenAI the role of critical reviewer during planning.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Our Prompt">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>Our Prompt
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>AI Example Prompt 1: Assigning GenAI the role of critical reviewer during planning.</strong></p>
 <p><strong>Role:</strong> you are a senior biostatistician with expertise in statistical genomics, R programming, and epigenetics.</p>
 <p><strong>Task:</strong> act as a critical reviewer of the analytical plan described below. Identify weaknesses, potential confounders, and power concerns. List the pros and cons of alternative approaches rather than recommending a single fix. Do not write any code.</p>
 <p><strong>Study context:</strong> I am designing a study examining whether DNA methylation (DNAm) at 13 CpG sites in the ABC gene predicts patient-reported headache outcomes following aneurysmal subarachnoid hemorrhage (aSAH). I have mapped out an analytical plan, and the purpose of this interaction is to stress test, refine, and improve it before pre-specifying it with my team.</p>
@@ -274,44 +274,44 @@ Note
 </ul>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled" title="AI Response">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+<span class="screen-reader-only">Tip</span>AI Response
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>AI Response (illustrative):</strong> A few things worth stress-testing: (1) with n=200 for the DNAm subset, statistical power to detect small methylation effects after Bonferroni correction across 26 tests may be limited — consider reporting effect sizes and confidence intervals alongside p-values, not p-values alone; (2) Fisher grade and age may be correlated with both DNAm patterns and headache severity — confirm this isn’t masking or inflating the DNAm association; (3) an alternative to per-site Bonferroni correction would be a false discovery rate (FDR) approach, which is less conservative and common in epigenome-wide analyses — worth discussing with your biostatistician which is more defensible for your design.</p>
+<p>A few things worth stress-testing: (1) with n=200 for the DNAm subset, statistical power to detect small methylation effects after Bonferroni correction across 26 tests may be limited — consider reporting effect sizes and confidence intervals alongside p-values, not p-values alone; (2) Fisher grade and age may be correlated with both DNAm patterns and headache severity — confirm this isn’t masking or inflating the DNAm association; (3) an alternative to per-site Bonferroni correction would be a false discovery rate (FDR) approach, which is less conservative and common in epigenome-wide analyses — worth discussing with your biostatistician which is more defensible for your design.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>This kind of exchange is often iterative. Continuing the example above, a follow-up might read:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Our Prompt">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>Our Prompt
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Follow-up prompt (illustrating iterative exchange):</strong></p>
 <p>Thank you — helpful points. On the power concern: we unfortunately do not have the ability to increase n at this stage, so will proceed with n=200 and plan to report effect sizes and CIs throughout. On the multiple testing question: I discussed FDR vs.&nbsp;Bonferroni with our biostatistician and we decided to use Bonferroni given the candidate-gene design and small number of tests. Can you help me think through whether there are any additional covariates I should consider beyond age, sex, and Fisher grade?</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled" title="AI Response">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+<span class="screen-reader-only">Tip</span>AI Response
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>AI Response (illustrative):</strong> Given the aSAH context, a few additional covariates worth considering: (1) time from aSAH onset to DNAm sample collection, since methylation patterns can shift acutely after neurological injury; (2) medication use at time of sampling, particularly corticosteroids or antiepileptics, which are known to influence DNA methylation; (3) Glasgow Outcome Scale score or clinical severity at discharge, which may confound both headache outcomes and DNAm patterns. Whether to include these depends on availability in your dataset and your pre-specified model — worth flagging in your analytic proposal even if you decide not to adjust for them.</p>
+<p>Given the aSAH context, a few additional covariates worth considering: (1) time from aSAH onset to DNAm sample collection, since methylation patterns can shift acutely after neurological injury; (2) medication use at time of sampling, particularly corticosteroids or antiepileptics, which are known to influence DNA methylation; (3) Glasgow Outcome Scale score or clinical severity at discharge, which may confound both headache outcomes and DNAm patterns. Whether to include these depends on availability in your dataset and your pre-specified model — worth flagging in your analytic proposal even if you decide not to adjust for them.</p>
 </div>
 </div>
 <p><em>(The conversation continues.)</em></p>
@@ -323,17 +323,17 @@ Tip
 <section id="build-the-synthetic-dataset" class="level4">
 <h4 class="anchored" data-anchor-id="build-the-synthetic-dataset">Build the Synthetic Dataset</h4>
 <p>A foundational principle of this workflow is the synthetic-data-first approach: the full analytical workflow is built and tested using privacy-safe <em>simulated data</em> before any real participant data are introduced. At no point is real participant data — including individual rows, values, or screenshots — shared with GenAI platforms.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>In this next example, we ask GenAI to generate a synthetic dataset matching our study’s structure.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Our Prompt">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>Our Prompt
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>AI Example Prompt 2: Synthetic data generation.</strong></p>
 <p><strong>Role:</strong> you are an experienced R programmer and biostatistician specializing in epigenetic data workflows.</p>
 <p><strong>Task:</strong> create an RMarkdown file with annotated code to a generate synthetic dataset matching the structure described below. The purpose of this synthetic dataset is to serve as a privacy-safe substitute for real participant data during analytical code development. Provide inline comments explaining each step and the reasoning behind key distributional choices. Ask me questions if I have missed something that you need in the prompt below.</p>
 <p><strong>Dataset structure:</strong></p>
@@ -349,17 +349,17 @@ Note
 </div>
 </div>
 <p>Note the level of detail in this prompt: every variable, distribution, and parameter is explicitly defined. These specification decisions are best made collaboratively with a biostatistician or research team before writing the prompt, mirroring the pre-specification process from Phase One. GenAI executes decisions the team has already made; it does not make them.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled" title="AI Response">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+<span class="screen-reader-only">Tip</span>AI Response
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>AI Response (illustrative):</strong> Here’s R code that builds the cohort in two stages — first the full N=650 sample with covariates and outcomes, then the 200-person DNAm subset with CpG M-values — so the <code>has_dnam</code> flag correctly reflects which rows carry methylation data.</p>
+<p>Here’s R code that builds the cohort in two stages — first the full N=650 sample with covariates and outcomes, then the 200-person DNAm subset with CpG M-values — so the <code>has_dnam</code> flag correctly reflects which rows carry methylation data.</p>
 </div>
 </div>
 <p>Pasting in the GenAI output into our R markdown we can then easily produce a fully synthetic dataset!</p>
@@ -501,21 +501,21 @@ female   male
 </section>
 <section id="fit-the-analytic-model" class="level4">
 <h4 class="anchored" data-anchor-id="fit-the-analytic-model">Fit the Analytic Model</h4>
-<p>Throughout code development, GenAI can be used for targeted tasks — drafting initial code, debugging error messages, refining and annotating existing code — with specific, bounded requests rather than open-ended rewrites. One of the most powerful applications of this targeted approach is using GenAI to build a reusable function — a task that is technically well-defined, involves no participant data, and produces efficient, reproducible code that can be applied across multiple models.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>Throughout code development, GenAI can be used for targeted tasks, drafting initial code, debugging error messages, refining and annotating existing code, with specific, bounded requests rather than open-ended rewrites. One of the most powerful applications of this targeted approach is using GenAI to build a reusable function, a task that is technically well-defined, involves no participant data, and produces efficient, reproducible code that can be applied across multiple models.</p>
+<p>In this next example, we assign GenAI the role of code developer for the primary regression analysis.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Our Prompt">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>Our Prompt
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>AI Example Prompt 3: Assigning GenAI the role of code developer for the primary regression analysis.</strong></p>
-<p>Role: you are an experienced R programmer and biostatistician specializing in epigenetic data workflows.</p>
-<p>Task: using the synthetic dataset generated in our previous exchange, write annotated R code to run the primary regression analyses described below. Build the code in small, testable chunks and include inline comments explaining each step. Do not modify the dataset or introduce new variables.</p>
-<p>Analysis specifications:</p>
+<p><strong>Role:</strong> you are an experienced R programmer and biostatistician specializing in epigenetic data workflows.</p>
+<p><strong>Task:</strong> using the synthetic dataset generated in our previous exchange, write annotated R code to run the primary regression analyses described below. Build the code in small, testable chunks and include inline comments explaining each step. Do not modify the dataset or introduce new variables.</p>
+<p><strong>Analysis specifications:</strong></p>
 <ul>
 <li>Run binary logistic regression models for each of 13 CpG sites (cg1–cg13) × 2 outcomes (acute_headache, persistent_headache) = 26 models total; implement this as a reusable R function rather than a loop, to promote code efficiency and reusability</li>
 <li>Model formula for each: outcome ~ CpG_Mvalue + age + sex + fisher_grade, using the DNAm subset only (has_dnam=TRUE)</li>
@@ -523,20 +523,20 @@ Note
 <li>Apply Bonferroni correction across the 13 tests within each outcome (corrected significance threshold = 0.05/13 ≈ 0.0038)</li>
 <li>Organize all results into a single clean summary table with columns: CpG site, outcome, odds ratio, lower 95% CI, upper 95% CI, p-value, Bonferroni-corrected significance (yes/no); write that file as an excel document</li>
 </ul>
-<p>Output: the final summary table should be print-ready and suitable for inclusion in a manuscript.</p>
+<p><strong>Output:</strong> the final summary table should be print-ready and suitable for inclusion in a manuscript.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled" title="AI Response">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+<span class="screen-reader-only">Tip</span>AI Response
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>AI Response (illustrative):</strong> Here is a reusable function <code>run_cpg_model()</code> that fits one logistic regression model given a CpG site name and outcome name, extracts the DNAm term, and returns a tidy results row. Wrapping the logic in a function keeps the code modular and easy to debug one model at a time before scaling to all 26.</p>
+<p>Here is a reusable function <code>run_cpg_model()</code> that fits one logistic regression model given a CpG site name and outcome name, extracts the DNAm term, and returns a tidy results row. Wrapping the logic in a function keeps the code modular and easy to debug one model at a time before scaling to all 26.</p>
 </div>
 </div>
 <p>Good coding practice is to write a little, run it, check the output, then build from there. The code below first fits a single representative model (cg1 → acute headache) to confirm everything works as intended, then scales up using a reusable function across all 13 CpG sites and both outcomes.</p>
@@ -644,18 +644,17 @@ Estimate5                  FALSE</code></pre>
 </div>
 </div>
 <p><em>(The full results table, including all 26 models, is generated by applying the function across all CpG sites and outcomes as shown above.)</em></p>
-<p>GenAI can also help us enhance communication by helping draft publication-quality figures. For example, the forest plot below was generated using code developed with GenAI assistance.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>GenAI can also help us enhance communication by helping draft publication-quality figures. As a bonus example, we assign GenAI the role of figure developer for the forest plot below.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Our Prompt">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>Our Prompt
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>AI Example Prompt (bonus): Assigning GenAI the role of figure developer.</strong></p>
 <p><strong>Role:</strong> you are an experienced R programmer and biostatistician specializing in epigenetic data workflows.</p>
 <p><strong>Task:</strong> using the <code>results</code> object generated in our previous exchange, write annotated R code to create a forest plot displaying the odds ratios and 95% confidence intervals for the DNAm predictor across all 26 models. The plot should:</p>
 <ul>
@@ -667,17 +666,17 @@ Note
 </ul>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled" title="AI Response">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+<span class="screen-reader-only">Tip</span>AI Response
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>AI Response (illustrative):</strong> Here is ggplot2 code that facets by outcome and uses three levels of visual emphasis: gray open circles for non-significant results, blue filled circles for nominally significant results, and purple filled circles for Bonferroni-significant results.</p>
+<p>Here is ggplot2 code that facets by outcome and uses three levels of visual emphasis: gray open circles for non-significant results, blue filled circles for nominally significant results, and purple filled circles for Bonferroni-significant results.</p>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -732,13 +731,13 @@ Tip
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-important callout-titled" title="Important">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+<span class="screen-reader-only">Important</span>Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -753,21 +752,21 @@ Important
 </section>
 <section id="interpret-results" class="level4">
 <h4 class="anchored" data-anchor-id="interpret-results">Interpret Results</h4>
-<p>Under the guiding principles in Table 1, GenAI is used to translate statistical output into plain language, but the researcher retains full interpretive authority. GenAI functions as a translator of numbers into words — it should not be used to determine clinical or scientific significance. That judgment belongs to the researcher, who brings domain expertise, knowledge of the study population, and understanding of the broader literature that no GenAI tool can replicate.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>Under the guiding principles in Table 1, GenAI is used to translate statistical output into plain language, but the researcher retains full interpretive authority. GenAI functions as a translator of numbers into words, it should not be used to determine clinical or scientific significance. That judgment belongs to the researcher, who brings domain expertise, knowledge of the study population, and understanding of the broader literature that no GenAI tool can replicate.</p>
+<p>In this next example, we assign GenAI the role of statistical translator.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Our Prompt">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>Our Prompt
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>AI Example Prompt 4: Assigning GenAI the role of statistical translator.</strong></p>
-<p>Role: you are a senior biostatistician with expertise in statistical genomics, R programming, and epigenetics.</p>
-<p>Task: translate the statistical results below into plain language including what the odds ratios, confidence intervals, and p-values mean in the context of this specific model, including the direction and magnitude of the association and what the reference category is.</p>
-<p>Boundary: do not comment on clinical meaning, significance for patient care, or implications for nursing practice; that interpretation belongs to the research team. Limit your response to what the numbers mean statistically.</p>
+<p><strong>Role:</strong> you are a senior biostatistician with expertise in statistical genomics, R programming, and epigenetics.</p>
+<p><strong>Task:</strong> translate the statistical results below into plain language including what the odds ratios, confidence intervals, and p-values mean in the context of this specific model, including the direction and magnitude of the association and what the reference category is.</p>
+<p><strong>Boundary:</strong> do not comment on clinical meaning, significance for patient care, or implications for nursing practice; that interpretation belongs to the research team. Limit your response to what the numbers mean statistically.</p>
 <p>[paste model output]</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
@@ -797,26 +796,26 @@ Number of Fisher Scoring iterations: 4</code></pre>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled" title="AI Response">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+<span class="screen-reader-only">Tip</span>AI Response
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>AI Response (illustrative):</strong> For cg1, the log-odds coefficient is 0.023, which converts to an odds ratio of approximately 1.02 (95% CI: approximately 0.75–1.40). This indicates that for each one-unit increase in DNAm M-value at cg1, the estimated odds of acute headache increase by about 2%, holding all other variables constant. The p-value is 0.89, which is far above any conventional significance threshold. The reference category for sex is ‘female’ — the sexmale coefficient (0.64, p=0.066) represents the difference in log-odds for males relative to females, converting to an odds ratio of approximately 1.91. Fisher grade has a positive coefficient (0.48, p=0.035), converting to an odds ratio of approximately 1.61 per one-unit increase in grade. Age shows a small negative coefficient (-0.025, p=0.16), converting to an odds ratio of approximately 0.98 per one-year increase.</p>
+<p>For cg1, the log-odds coefficient is 0.023, which converts to an odds ratio of approximately 1.02 (95% CI: approximately 0.75–1.40). This indicates that for each one-unit increase in DNAm M-value at cg1, the estimated odds of acute headache increase by about 2%, holding all other variables constant. The p-value is 0.89, which is far above any conventional significance threshold. The reference category for sex is ‘female’ — the sexmale coefficient (0.64, p=0.066) represents the difference in log-odds for males relative to females, converting to an odds ratio of approximately 1.91. Fisher grade has a positive coefficient (0.48, p=0.035), converting to an odds ratio of approximately 1.61 per one-unit increase in grade. Age shows a small negative coefficient (-0.025, p=0.16), converting to an odds ratio of approximately 0.98 per one-year increase.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-important callout-titled" title="Important">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+<span class="screen-reader-only">Important</span>Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
