@@ -11,19 +11,21 @@ License: GPL-2 ([link](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 
 Use the table of contents in the upper left corner to jump to any section (e.g., Overview, Code of Conduct, Application, Generative AI Disclosure), or click the arrow in the bottom right corner to move through the tutorial sequentially.
 
-This tutorial walks through a two-phase workflow for responsible human-GenAI collaboration in quantitative data analysis, illustrated through a nursing-focused genomic research example. It includes example prompts with illustrative AI responses shown in colored callout boxes, and the code runs end-to-end.
+This tutorial walks through a two-phase workflow for responsible human-GenAI collaboration in quantitative data analysis, illustrated through a nursing-focused genomic research example. The code runs end-to-end, with example prompts, illustrative AI responses, and key takeaways shown in colored callout boxes throughout. Here's what to expect:
 
-::: {.callout-note}
-## Our Prompt
+::: {.callout-note title="Our Prompt"}
 This is an example of how a human prompt will appear.
 :::
 
-::: {.callout-tip}
-## AI Response
+::: {.callout-tip title="AI Response"}
 This is an example of how an AI-generated illustrative response will appear.
 :::
 
-Every value generated and analyzed in this tutorial is randomly simulated and does **not** represent any real research participant. This document exists solely to demonstrate the *structure of the data* and the *analytical code* used in the workflow, so that the pipeline is transparent and reproducible.
+::: {.callout-important title="Important"}
+This is an example of how an important note or takeaway will appear.
+:::
+
+Every value generated and analyzed in this tutorial is randomly simulated and does **not** represent any real research participant. This document exists solely to demonstrate the *structure of the data* and the *analytical code* used in the workflow, so that the workflow is transparent and reproducible.
 
 ## Source Code
 
