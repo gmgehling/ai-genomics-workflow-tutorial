@@ -360,11 +360,6 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>AI Response (illustrative):</strong> Here’s R code that builds the cohort in two stages — first the full N=650 sample with covariates and outcomes, then the 200-person DNAm subset with CpG M-values — so the <code>has_dnam</code> flag correctly reflects which rows carry methylation data.</p>
-<p><code>set.seed(123)  # ensures reproducibility</code></p>
-<p><code>N &lt;- 650        # full cohort size</code> <code>n_dnam &lt;- 200   # subset with DNAm data available</code></p>
-<p><code># --- Step 1: Generate baseline cohort (N = 650) ---</code> <code>df &lt;- data.frame(</code> <code>ID = 1:N,</code> <code>age = round(rnorm(N, mean = 55, sd = 10), 0),</code> <code>sex = sample(c("male", "female"), N, replace = TRUE, prob = c(0.3, 0.7)),</code> <code>fisher_grade = sample(c(2, 3, 4), N, replace = TRUE, prob = c(0.3, 0.4, 0.3)),</code> <code>acute_headache = rbinom(N, 1, 0.25),</code> <code>persistent_headache = rbinom(N, 1, 0.30)</code> <code>)</code></p>
-<p><code># --- Step 2: Flag which participants have DNAm data (n = 200 subset) ---</code><br>
-[Etc, etc.]</p>
 </div>
 </div>
 <p>Pasting in the GenAI output into our R markdown we can then easily produce a fully synthetic dataset!</p>
