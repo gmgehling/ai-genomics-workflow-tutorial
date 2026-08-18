@@ -158,24 +158,6 @@ does not make them.
 in two stages — first the full N=650 sample with covariates and
 outcomes, then the 200-person DNAm subset with CpG M-values — so the
 `has_dnam` flag correctly reflects which rows carry methylation data.
-
-`set.seed(123)  # ensures reproducibility`
-
-`N <- 650        # full cohort size`
-`n_dnam <- 200   # subset with DNAm data available`
-
-`# --- Step 1: Generate baseline cohort (N = 650) ---`
-`df <- data.frame(`
-  `ID = 1:N,`
-  `age = round(rnorm(N, mean = 55, sd = 10), 0),`
-  `sex = sample(c("male", "female"), N, replace = TRUE, prob = c(0.3, 0.7)),`
-  `fisher_grade = sample(c(2, 3, 4), N, replace = TRUE, prob = c(0.3, 0.4, 0.3)),`
-  `acute_headache = rbinom(N, 1, 0.25),`
-  `persistent_headache = rbinom(N, 1, 0.30)`
-`)`
-
-`# --- Step 2: Flag which participants have DNAm data (n = 200 subset) ---`      
-[Etc, etc.]
 :::
 
 Pasting in the GenAI output into our R markdown we can then easily produce a 

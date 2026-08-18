@@ -7,14 +7,27 @@ Gehling GM, Heinsberg LW. *Partnering with Generative Artificial Intelligence fo
 **Copyright 2026, University of Pittsburgh. All Rights Reserved.**  
 License: GPL-2 ([link](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html))
 
-::: {.callout-caution}
-## This Tutorial Uses Synthetic Data
-Every value generated and analyzed in this tutorial is randomly simulated and does **not** represent any real research participant. This document exists solely to demonstrate the *structure of the data* and the *analytical code* used in the workflow, so that the pipeline is transparent and reproducible.
-:::
-
 ## How to Use This Tutorial
 
-Navigate using the table of contents on the left. The tutorial walks through a two-phase workflow for responsible human-GenAI collaboration in quantitative data analysis, illustrated through a nursing-focused genomic research example.
+Use the table of contents in the upper left corner to jump to any section (e.g., Overview, Code of Conduct, Application, Generative AI Disclosure), or click the arrow in the bottom right corner to move through the tutorial sequentially.
+
+This tutorial walks through a two-phase workflow for responsible human-GenAI collaboration in quantitative data analysis, illustrated through a nursing-focused genomic research example. It includes example prompts with illustrative AI responses shown in colored callout boxes, and the code runs end-to-end.
+
+::: {.callout-note}
+## Our Prompt
+This is an example of how a human prompt will appear.
+:::
+
+::: {.callout-tip}
+## AI Response
+This is an example of how an AI-generated illustrative response will appear.
+:::
+
+Every value generated and analyzed in this tutorial is randomly simulated and does **not** represent any real research participant. This document exists solely to demonstrate the *structure of the data* and the *analytical code* used in the workflow, so that the pipeline is transparent and reproducible.
+
+## Source Code
+
+This tutorial's source code is maintained separately from this site and is publicly available on GitHub at https://github.com/gmgehling/ai-genomics-workflow-tutorial.
 
 ## Contact
 
