@@ -12,6 +12,12 @@ Intelligence for Quantitative Data Analysis in Nursing Research:
 A Practical Workflow for Ethical Collaboration. *Biological Research
 for Nursing*. Submitted 2026.
 
+This guide was adapted from a presentation delivered at the International Society 
+of Nurses in Genetics (ISONG) Annual Meeting. Originally presented as: 
+Heinsberg LW. *Partnering with AI for Genomic Informatics: Practical Workflows 
+for Data Analysis and Interpretation.* Expert Lecture; International Society of 
+Nurses in Genetics; November 2025; Montreal, Canada.
+
 ## Overview
 This repository is a companion to the manuscript above. The purpose of
 the paper was to propose a two-phase workflow for responsible human-AI
