@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "AI Genomics Workflow Tutorial",
     "section": "",
-    "text": "Welcome\nThis is the companion tutorial for:\nGehling GM, Heinsberg LW. Partnering with Generative Artificial Intelligence for Quantitative Data Analysis in Nursing Research: A Practical Workflow for Ethical Collaboration. Biological Research for Nursing. Submitted 2026.\nThis guide was adapted from a presentation delivered at the International Society of Nurses in Genetics (ISONG) Annual Meeting. Originally presented as: Heinsberg LW. Partnering with AI for Genomic Informatics: Practical Workflows for Data Analysis and Interpretation. Expert Lecture; International Society of Nurses in Genetics; November 2025; Montreal, Canada.\nCopyright 2026, University of Pittsburgh. All Rights Reserved.\nLicense: GPL-2 (link)",
+    "text": "Welcome\nThis is the companion tutorial for:\nGehling GM, Heinsberg LW. Partnering with Generative Artificial Intelligence for Quantitative Data Analysis in Nursing Research: A Practical Workflow for Ethical Collaboration. Biological Research for Nursing. Submitted 2026.\nThis tutorial was adapted from a presentation delivered at the International Society of Nurses in Genetics (ISONG) Annual Meeting. Originally presented as: Heinsberg LW. Partnering with AI for Genomic Informatics: Practical Workflows for Data Analysis and Interpretation. Expert Lecture; International Society of Nurses in Genetics; November 2025; Montreal, Canada.\nCopyright 2026, University of Pittsburgh. All Rights Reserved.\nLicense: GPL-2 (link)",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome</span>"
     ]
@@ -44,7 +44,7 @@
     "href": "tutorial_overview.html",
     "title": "Overview",
     "section": "",
-    "text": "Copyright\nCopyright 2026, University of Pittsburgh. All Rights Reserved. License: GPL-2 (link)",
+    "text": "Introduction\nGenerative AI (GenAI) tools (e.g., Claude, Gemini) are systems capable of generating text, code, and other content in response to user prompts (Figure 1).\nThis tutorial is designed for nurse scientists, trainees, and researchers across the health and biological sciences who are interested in using GenAI responsibly in quantitative data analysis. It is particularly relevant for those working with sensitive human data where privacy protection and reproducibility are paramount.\nNo prior experience with GenAI is required, though familiarity with R programming and basic statistical methods is assumed. This tutorial is designed to complement our companion manuscript on this workflow, and readers are encouraged to read both together.",
     "crumbs": [
       "Tutorial",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Overview</span>"
@@ -54,8 +54,8 @@
     "objectID": "tutorial_overview.html#introduction",
     "href": "tutorial_overview.html#introduction",
     "title": "Overview",
-    "section": "Introduction",
-    "text": "Introduction\nGenerative AI (GenAI) tools (e.g., Claude, Gemini) are systems capable of generating text, code, and other content in response to user prompts (Figure 1).\n\n\n\nFigure 1. Generative AI, LLMs, and GPTs: a nested relationship.\n\n\nThis tutorial is designed for nurse scientists, trainees, and researchers across the health and biological sciences who are interested in using GenAI responsibly in quantitative data analysis. It is particularly relevant for those working with sensitive human data where privacy protection and reproducibility are paramount.\nNo prior experience with GenAI is required, though familiarity with R programming and basic statistical methods is assumed. This tutorial is designed to complement our companion manuscript on this workflow, and readers are encouraged to read both together.",
+    "section": "",
+    "text": "Figure 1. Generative AI, LLMs, and GPTs: a nested relationship.",
     "crumbs": [
       "Tutorial",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Overview</span>"
