@@ -18,7 +18,5 @@ Before beginning, we review an example analytic code of conduct for responsible 
 | Revisit ethics and policy | Frequently revisit GenAI ethics through regular self-reflection as norms evolve rapidly |
 
 ::: {.callout-important}
-**Core principle:** GenAI is a tool, not a decision-maker.
-Humans retain full interpretive authority over every analytic decision
-in this workflow.
+GenAI is a tool, not a decision-maker.Humans retain full interpretive authority over every analytic decision in this workflow.
 :::

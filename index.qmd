@@ -4,6 +4,9 @@ This is the companion tutorial for:
 
 Gehling GM, Heinsberg LW. *Partnering with Generative Artificial Intelligence for Quantitative Data Analysis in Nursing Research: A Practical Workflow for Ethical Collaboration.* Biological Research for Nursing. Submitted 2026.
 
+This guide was adapted from a presentation delivered at the International Society of Nurses in Genetics (ISONG) Annual Meeting. Originally presented as: 
+Heinsberg LW. Partnering with AI for Genomic Informatics: Practical Workflows for Data Analysis and Interpretation. Expert Lecture; International Society of Nurses in Genetics; November 2025; Montreal, Canada.
+
 **Copyright 2026, University of Pittsburgh. All Rights Reserved.**  
 License: GPL-2 ([link](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html))
 
@@ -22,7 +25,7 @@ This is an example of how an AI-generated illustrative response will appear.
 :::
 
 ::: {.callout-important title="Important"}
-This is an example of how an important note or takeaway will appear.
+This is an example of how important information, such as core principles in action, will appear throughout the tutorial.
 :::
 
 Every value generated and analyzed in this tutorial is randomly simulated and does **not** represent any real research participant. This document exists solely to demonstrate the *structure of the data* and the *analytical code* used in the workflow, so that the workflow is transparent and reproducible.

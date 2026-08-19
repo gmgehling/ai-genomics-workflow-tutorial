@@ -382,7 +382,7 @@ ggplot(results_plot, aes(x = odds_ratio, y = cpg_site,
 ```
 
 ::: {.callout-important title="Important"}
-**Key takeaway:** Real participant data were never shared with GenAI.
+Real participant data were never shared with GenAI.
 The function was built and validated entirely on synthetic data.
 When the real dataset is swapped in, this code runs without
 modification because it was written for a data structure, not a
@@ -427,8 +427,7 @@ For cg1, the log-odds coefficient is 0.023, which converts to an odds ratio of a
 :::
 
 ::: {.callout-important title="Important"}
-**Retain interpretive authority:** this prompt illustrates the
-'retain interpretive authority' principle in action.
+This prompt illustrates the 'retain interpretive authority' principle in action.
 GenAI translates the numbers into words — the researcher decides what
 those words mean for patients, populations, and nursing practice. For
 researchers at any career stage, making this boundary explicit in the
