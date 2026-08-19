@@ -12,3 +12,6 @@ of generating text, code, and other content in response to user
 prompts (Figure 1).
 
 ![**Figure 1.** Generative AI, LLMs, and GPTs: a nested relationship.](figures/fig1_genai_llm_gpt_relationship.png){width=70%}
+This tutorial is designed for nurse scientists, trainees, and researchers across the health and biological sciences who are interested in using GenAI responsibly in quantitative data analysis. It is particularly relevant for those working with sensitive human data where privacy protection and reproducibility are paramount.
+
+No prior experience with GenAI is required, though familiarity with R programming and basic statistical methods is assumed. This tutorial is designed to complement our companion manuscript on this workflow, and readers are encouraged to read both together.
