@@ -55,7 +55,7 @@
     "href": "tutorial_overview.html#introduction",
     "title": "Overview",
     "section": "Introduction",
-    "text": "Introduction\nGenerative AI (GenAI) tools (e.g., Claude, Gemini) are systems capable of generating text, code, and other content in response to user prompts (Figure 1).\n\n\n\nFigure 1. Generative AI, LLMs, and GPTs: a nested relationship.",
+    "text": "Introduction\nGenerative AI (GenAI) tools (e.g., Claude, Gemini) are systems capable of generating text, code, and other content in response to user prompts (Figure 1).\n This tutorial is designed for nurse scientists, trainees, and researchers across the health and biological sciences who are interested in using GenAI responsibly in quantitative data analysis. It is particularly relevant for those working with sensitive human data where privacy protection and reproducibility are paramount.\nNo prior experience with GenAI is required, though familiarity with R programming and basic statistical methods is assumed. This tutorial is designed to complement our companion manuscript on this workflow, and readers are encouraged to read both together.",
     "crumbs": [
       "Tutorial",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Overview</span>"
