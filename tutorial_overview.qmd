@@ -1,10 +1,5 @@
 # Overview
 
-## Copyright
-
-Copyright 2026, University of Pittsburgh. All Rights Reserved.<br/>
-License: GPL-2 ([link](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html))
-
 ## Introduction
 
 Generative AI (GenAI) tools (e.g., Claude, Gemini) are systems capable
